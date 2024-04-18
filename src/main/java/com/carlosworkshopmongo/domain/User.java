@@ -3,10 +3,15 @@ package com.carlosworkshopmongo.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "user") // se pusemos  só  @Document o speing va acriar uma tebela ou colecao com o nome da classe mas em minuscula
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Id
 	private String id;
 	private String name;
 	private String email;
